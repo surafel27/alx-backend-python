@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """multiple coroutines at the same time with async"""
 import asyncio
+from typing import List
 wait_random = __import__('0-basic_async_syntax').wait_random
 
 
@@ -14,7 +15,7 @@ def bubble_sort(lst):
     return lst
 
 
-async def wait_n(n: int, max_delay: int) -> float:
+async def wait_n(n: int, max_delay: int) -> List[float]:
     """2 int arguments (in this order): n and max_delay
     """
     list_of_delay = []
