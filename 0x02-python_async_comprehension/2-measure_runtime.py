@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-'''Task 2's module.
+'''Run time for four parallel comprehensions
 '''
 import asyncio
 import time
