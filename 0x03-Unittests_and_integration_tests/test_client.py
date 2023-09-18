@@ -24,7 +24,8 @@ class TestGithubOrgClient(unittest.TestCase):
 
     def test_public_repos_url(self):
         """Tests the `_public_repos_url` property."""
-        with patch.object(GithubOrgClient, "org", new_callable=PropertyMock) as m:
+        with patch.object(GithubOrgClient, "org",
+                          new_callable=PropertyMock) as m:
             m.return_value = {"repos_url": "89"}
             test_org = GithubOrgClient("holberton")
             test_repo_url = test_org._public_repos_url
@@ -88,7 +89,8 @@ def requests_get(*args, **kwargs):
 
 @parameterized_class(
     ("org_payload", "repos_payload", "expected_repos", "apache2_repos"),
-    [(TEST_PAYLOAD[0][0], TEST_PAYLOAD[0][1], TEST_PAYLOAD[0][2], TEST_PAYLOAD[0][3])],
+    [(TEST_PAYLOAD[0][0], TEST_PAYLOAD[0][1],
+      TEST_PAYLOAD[0][2], TEST_PAYLOAD[0][3])],
 )
 class TestIntegrationGithubOrgClient(unittest.TestCase):
     """Performs integration tests for the `GithubOrgClient` class."""
